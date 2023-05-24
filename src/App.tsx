@@ -28,7 +28,7 @@ const App = () => {
 
   return (
     <div
-      className={`${activeModTheme} font-roboto bg-skin-fill text-skin-base h-screen w-screen flex flex-col pt-[169px] items-center`}
+      className={`${activeModTheme} font-roboto bg-skin-fill text-skin-base h-screen w-screen flex flex-col pt-[118px] md:pt-[169px] items-center`}
     >
       <Mode modeName={activeModeData.name} activeModTheme={activeModTheme} />
       <Timer
