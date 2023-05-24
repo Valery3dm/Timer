@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Link on deploy https://valery3dm.github.io/Timer/
 
 ## Available Scripts
 
