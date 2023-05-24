@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+import useTheme from './hooks/useTheme';
+
+import Mode from './components/Mode';
+import Settings from './components/Settings';
+import Timer from './components/Timer';
+
+import { data } from './mocks/mockData';
+
+const App = () => {
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [isNotificationsOn, setIsNotificationsOn] = useState(false);
+
+  const {
+    activeModTheme,
+    activeModeData,
+    changeMode,
+    toggleTheme,
+    theme,
+    modsList,
+    setModsList,
+  } = useTheme(data);
+
+  const handleNotification = (): void => {
+    setIsNotificationsOn(!isNotificationsOn);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className={`${activeModTheme} font-roboto bg-skin-fill text-skin-base h-screen w-screen flex flex-col pt-[169px] items-center`}
+    >
+      <Mode modeName={activeModeData.name} activeModTheme={activeModTheme} />
+      <Timer
+        seconds={activeModeData.seconds}
+        setSettingsOpen={setSettingsOpen}
+        changeMode={changeMode}
+        isNotificationsOn={isNotificationsOn}
+      />
+      {settingsOpen && (
+        <Settings
+          toggleTheme={toggleTheme}
+          setSettingsOpen={setSettingsOpen}
+          theme={theme}
+          modsList={modsList}
+          setModsList={setModsList}
+          isNotificationsOn={isNotificationsOn}
+          handleNotification={handleNotification}
+        />
+      )}
     </div>
   );
-}
+};
 
 export default App;

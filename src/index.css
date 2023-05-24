@@ -1,13 +1,73 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+
+  .theme-red {
+    --text-color: rgba(71, 21, 21, 1);
+    --border-color: rgba(71, 21, 21, 1);
+    --border-input-color: rgba(0, 0, 0, 0.15);
+    --fill-color: rgba(255, 242, 242, 1);
+    --fill-blackout: rgba(217, 206, 206, 0.2);
+    --fill-color-element: rgba(255, 76, 76, 0.15);
+    --fill-color-controller: rgba(255, 76, 76, 0.71);
+    --fill-color-toggle-button: rgba(0, 0, 0, 0.24);
+  }
+
+  .theme-green {
+    --text-color: rgba(20, 64, 29, 1);
+    --border-color: rgba(20, 64, 29, 1);
+    --border-input-color: rgba(0, 0, 0, 0.15);
+    --fill-color: rgba(242, 255, 245, 1);
+    --fill-blackout: rgba(206, 217, 208, 0.2);
+    --fill-color-element: rgba(77, 218, 110, 0.15);
+    --fill-color-controller: rgba(77, 218, 110, 0.62);
+    --fill-color-toggle-button: rgba(0, 0, 0, 0.24);
+
+  }
+
+  .theme-blue {
+    --text-color: rgba(21, 48, 71, 1);
+    --border-color: rgba(21, 48, 71, 1);
+    --border-input-color: rgba(0, 0, 0, 0.15);
+    --fill-color: rgba(242, 249, 255, 1);
+    --fill-blackout: rgba(206, 208, 217, 0.2);
+    --fill-color-element: rgba(76, 172, 255, 0.15);
+    --fill-color-controller: rgba(76, 172, 255, 0.62);
+    --fill-color-toggle-button: rgba(0, 0, 0, 0.24);
+  }
+
+  .theme-red-dark {
+    --text-color: rgba(255, 242, 242, 1);
+    --border-color: rgba(255, 242, 242, 1);
+    --border-input-color: rgba(255, 255, 255, 0.15);
+    --fill-color: rgba(13, 4, 4, 1);
+    --fill-blackout: rgba(255, 244, 244, 0.2);
+    --fill-color-element: rgba(255, 76, 76, 0.15);
+    --fill-color-controller: rgba(255, 76, 76, 0.71);
+    --fill-color-toggle-button: rgba(255, 255, 255, 0.24);
+  }
+
+  .theme-green-dark {
+    --text-color: rgba(242, 255, 245, 1);
+    --border-color: rgba(242, 255, 245, 1);
+    --border-input-color: rgba(255, 255, 255, 0.15);
+    --fill-color: rgba(4, 13, 6, 1);
+    --fill-blackout: rgba(244, 255, 246, 0.2);
+    --fill-color-element: rgba(77, 218, 110, 0.15);
+    --fill-color-controller: rgba(77, 218, 110, 0.62);
+    --fill-color-toggle-button: rgba(255, 255, 255, 0.24);
+  }
+
+  .theme-blue-dark {
+    --text-color: rgba(242, 249, 255, 1);
+    --border-color: rgba(242, 249, 255, 1);
+    --border-input-color: rgba(255, 255, 255, 0.15);
+    --fill-color: rgba(4, 9, 13, 1);
+    --fill-blackout: rgba(244, 245, 255, 0.2);
+    --fill-color-element: rgba(76, 172, 255, 0.15);
+    --fill-color-controller: rgba(76, 172, 255, 0.62);
+    --fill-color-toggle-button: rgba(255, 255, 255, 0.24);
+  }
 }
